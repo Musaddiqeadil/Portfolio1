@@ -6,6 +6,10 @@
     text-decoration: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     overflow-x: hidden;
 }
@@ -88,16 +92,45 @@ nav .navlinks{
 
 }
 
-
-nav .navlinks li{
-    display: inline-block;
+.navlinks i{
+    display: none;
 }
 
 
-nav .navlinks li a{
+.navlinks li {
+    display: inline-block;
+    position: relative;
+}
 
+.navlinks li a {
+    text-decoration: none;
     color: #e5e5e5;
-    margin-right: 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 10px 15px;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Border-bottom hover effect */
+.navlinks li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: #007ced;
+    transition: all 0.4s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.navlinks li a:hover::after {
+    width: 100%;
+}
+
+.navlinks li a:hover {
+    color: #e5e5e5;
 }
 
 .container{
@@ -268,7 +301,9 @@ nav .navlinks li a{
 
 .about-outer {
     background: #222;
-    padding: 50px 0;
+    padding: 30px 0;
+    margin-bottom: 60px;
+    height: 100vh;
 }
 
 .about-inner {
@@ -281,6 +316,7 @@ nav .navlinks li a{
     font-size: 3.5rem;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
 }
 
 .about-content {
@@ -288,7 +324,7 @@ nav .navlinks li a{
     align-items: center;
     justify-content: space-between;
     gap: 50px;
-    margin-top: 100px;
+    margin-top: 60px;
 }
 
 .about-content .about-img {
@@ -317,9 +353,8 @@ nav .navlinks li a{
    
 }
 .about-content .about-img img:hover {
-    
+    transform: scale(1.05);
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4);
-   
 }
 
 .about-main {
@@ -382,6 +417,7 @@ nav .navlinks li a{
     .about-content {
         flex-direction: column;
         text-align: left;
+       margin-top:0px;
     }
 
     .about-main {
@@ -413,7 +449,7 @@ nav .navlinks li a{
     }
     .about-inner h1 {
         font-size: 2.5rem;
-        text-align: left;
+        text-align: center;
     }
 
     .about-content {
@@ -458,9 +494,10 @@ nav .navlinks li a{
     justify-content: center;
     min-height: 100vh;
     background: #222;
-    padding: 50px 20px;
+    padding: 0px 20px;
     flex-direction: column;
     margin-top: -60px;
+    margin-bottom: 20px;
 }
 
 .experience-container {
@@ -474,9 +511,9 @@ nav .navlinks li a{
 }
 
 .experience-section h1 {
-    color: #007ced;
+    color: #e5e5e5;
     font-size: 3.5rem;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 }
 
 .experience-container p {
@@ -502,42 +539,49 @@ nav .navlinks li a{
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
     transition: 0.3s ease-in-out;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .experience-card:hover {
     transform: scale(1.05);
-    background: #e5e5e5;
+   
 }
 
 .exp-icon {
     font-size: 2.5rem;
-    color: #007ced;
+    color: #e5e5e5;
     margin-bottom: 10px;
 }
 
 .experience-card h2 {
     font-size: 1.8rem;
-    color: #007ced;
+    color: #e5e5e5;
 }
 
 .experience-card h4 {
     font-size: 1.3rem;
-    color: #333;
+    color: #e5e5e5;
 }
 
 .experience-card p {
     font-size: 1rem;
-    color: #555;
+    color: #e5e5e5;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
 
-    .experience-section h1 {
-        color: #007ced;
-        font-size: 2rem;
-        text-align: left;
+    .exp-h1 h1{
+
+        font-size: 2.5rem;
+        color: #e5e5e5;
+        
+        
     }
+   
+
     .experience-container {
         width: 95%;
         padding: 20px;
@@ -560,7 +604,8 @@ nav .navlinks li a{
 
 .porject-outer {
     background: #222;
-    padding: 60px 0;
+    padding: 30px 0;
+    margin-top: -50px;
 }
 
 .project-inner {
@@ -570,7 +615,7 @@ nav .navlinks li a{
 }
 
 .project-inner h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: #e5e5e5;
     margin-bottom: 30px;
     font-family: 'Poppins', sans-serif;
@@ -581,7 +626,7 @@ nav .navlinks li a{
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    margin-top: 80px;
+    margin-top: 60px;
 }
 
 .project-card {
@@ -648,11 +693,14 @@ nav .navlinks li a{
 @media (max-width: 768px) {
     .project-inner h1 {
         font-size: 2.5rem;
+        text-align: center;
+        margin-top: 40px;
     }
 
     .project-container {
         flex-direction: column;
         align-items: center;
+        
     }
 
     .project-card {
@@ -678,7 +726,7 @@ nav .navlinks li a{
     justify-content: center;
     min-height: 100vh;
     background: #222;
-    padding: 50px 20px;
+    padding: 30px 20px;
     flex-direction: column;
     margin-top: -30px;
 }
@@ -694,8 +742,9 @@ nav .navlinks li a{
 }
 
 .contact-section h1 {
-    color: #007ced;
-    font-size: 3rem;margin-bottom: 30px;
+    color: #e5e5e5;
+    font-size: 3rem;
+    margin-bottom: 30px;
 }
 
 .contact-container p {
@@ -760,40 +809,102 @@ button:hover {
 .contact-info {
     flex: 1;
     min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the left */
     text-align: left;
+    padding: 20px;
 }
 
+/* Contact Heading */
 .contact-info h2 {
-    font-size: 1.8rem;
-    color: #007ced;
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 15px;
+    position: relative;
 }
 
+/* Optional underline effect for heading */
+.contact-info h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #222;
+    margin-top: 5px;
+}
+
+/* Contact Details */
 .contact-info p {
-    font-size: 1rem;
-    color: #333;
+    font-size: 1.1rem;
+    color: #222;
     display: flex;
     align-items: center;
     gap: 10px;
-    margin: 10px 0;
+    margin: 8px 0;
+    transition: transform 0.3s ease-in-out;
 }
 
+/* Hover effect for slight lift */
+.contact-info p:hover {
+    transform: translateX(5px); /* Moves text slightly right on hover */
+}
+
+/* Icons inside Contact Info */
 .contact-info i {
-    color: #007ced;
+    color: #222;
+    font-size: 1.3rem;
 }
 
+/* Social Icons */
 .social-icons {
-    margin-top: 15px;
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start; /* Align icons to the left */
 }
 
+/* Social Media Icons */
 .social-icons a {
-    font-size: 1.5rem;
-    color: #007ced;
-    margin-right: 15px;
-    transition: 0.3s;
+    font-size: 1.8rem;
+    color: #222;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
+/* Hover effect for social icons */
 .social-icons a:hover {
-    color: #005bb5;
+    color: #222;
+    transform: scale(1.1);
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+
+
+    
+
+    .contact-section h1 {
+        font-size: 2.5rem;
+    }
+    .contact-info {
+        padding: 15px;
+    }
+
+    .contact-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+    }
+
+    .social-icons {
+        gap: 10px;
+    }
+
+    .social-icons a {
+        font-size: 1.5rem;
+    }
 }
 
 /* Responsive Design */

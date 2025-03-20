@@ -49,6 +49,51 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
 
 
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll(".navlinks a");
+    const sections = document.querySelectorAll("section");
+    
+    // Smooth Scroll & Active Class Toggle
+    navLinks.forEach((link) => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 50, // Adjust for navbar height
+                    behavior: "smooth",
+                });
+            }
+
+            // Close mobile menu if open
+            document.getElementById("navlinks").classList.remove("active");
+        });
+    });
+
+    // Highlight Active Section in Navbar
+    window.addEventListener("scroll", function () {
+        let current = "";
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop - 100;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href").substring(1) === current) {
+                link.classList.add("active");
+            }
+        });
+    });
+});
+
+
+
 // About Section
 
 
