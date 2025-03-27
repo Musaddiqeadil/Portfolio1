@@ -192,6 +192,8 @@ nav .navlinks{
 
 .btn-group{
     margin: 45px 0;
+    display: flex;
+
 }
 
 .btn-group .btn{
@@ -218,6 +220,7 @@ nav .navlinks{
     font-size: 22px;
     margin-right: 10px;
     transition: 0.7s ease-out;
+    
 
 }
 .hero-text .social i:hover{
@@ -290,6 +293,14 @@ nav .navlinks{
    .hero-text{
     padding: 40px 0px;
    }
+
+   .btn-group{
+    flex-direction: column;
+    text-align: center;
+
+}
+
+
 }
 
 
@@ -764,6 +775,7 @@ nav .navlinks{
 form {
     flex: 1;
     min-width: 280px;
+    width: auto;
 }
 
 .input-group {
@@ -910,17 +922,20 @@ button:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
     .contact-container {
-        width: 95%;
-        padding: 20px;
+        width: 100%;
+        padding-top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        
     }
 
     .contact-content {
         flex-direction: column;
-        align-items: center;
+        text-align: l;
     }
 
     .contact-info {
-        text-align: center;
+        text-align: left;
     }
 }
 
